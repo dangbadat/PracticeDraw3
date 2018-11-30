@@ -7,6 +7,9 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * 绘制下划线
+ */
 public class Practice07SetUnderlineTextView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     String text = "Hello HenCoder";
@@ -33,6 +36,7 @@ public class Practice07SetUnderlineTextView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        paint.setUnderlineText(true);
         canvas.drawText(text, 50, 100, paint);
     }
 }

@@ -42,5 +42,13 @@ public class Practice12MeasureTextView extends View {
         canvas.drawText(text1, 50, 200, paint1);
         canvas.drawText(text2, 50 + 100, 200, paint2);
         canvas.drawText(text3, 50 + 200, 200, paint1);
+
+        //获取文字宽度
+        float text1Width = paint1.measureText(text1);
+        float text2Width = paint2.measureText(text2);
+
+        canvas.drawText(text1, 50, 400, paint1);
+        canvas.drawText(text2, 50 + text1Width, 400, paint2);
+        canvas.drawText(text3, 50 + text1Width + text2Width, 400, paint1);
     }
 }

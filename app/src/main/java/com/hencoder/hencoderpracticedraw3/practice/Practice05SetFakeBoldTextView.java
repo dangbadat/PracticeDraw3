@@ -7,6 +7,9 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * 绘制伪粗体文字
+ */
 public class Practice05SetFakeBoldTextView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     String text = "Hello HenCoder";
@@ -32,7 +35,13 @@ public class Practice05SetFakeBoldTextView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.save();
 
         canvas.drawText(text, 50, 100, paint);
+
+        paint.setFakeBoldText(true);
+        canvas.drawText(text, 50, 200, paint);
+
+        canvas.restore();
     }
 }

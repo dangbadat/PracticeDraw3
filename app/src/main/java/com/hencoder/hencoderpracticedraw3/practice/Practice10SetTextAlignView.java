@@ -7,6 +7,9 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * 设置文字对齐方式
+ */
 public class Practice10SetTextAlignView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     String text = "Hello HenCoder";
@@ -36,12 +39,18 @@ public class Practice10SetTextAlignView extends View {
         // 使用 Paint.setTextAlign() 来调整文字对齐方式
 
         // 第一处：使用 Paint.Align.LEFT
+        //文字显示在绘制起始点的右边
+        paint.setTextAlign(Paint.Align.LEFT);
         canvas.drawText(text, getWidth() / 2, 100, paint);
 
         // 第二处：使用 Paint.Align.CENTER
+        //绘制起始点在文字的中间
+        paint.setTextAlign(Paint.Align.CENTER);
         canvas.drawText(text, getWidth() / 2, 200, paint);
 
         // 第三处：使用 Paint.Align.RIGHT
+        //文字显示在绘制起始点的左边
+        paint.setTextAlign(Paint.Align.RIGHT);
         canvas.drawText(text, getWidth() / 2, 300, paint);
     }
 }

@@ -7,6 +7,9 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * 绘制斜体文字
+ */
 public class Practice08SetTextSkewXView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     String text = "Hello HenCoder";
@@ -33,6 +36,8 @@ public class Practice08SetTextSkewXView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        //里面参数值为正数，向左倾斜；参数值为负数，向右倾斜
+        paint.setTextSkewX(-0.4F);
         canvas.drawText(text, 50, 100, paint);
     }
 }
